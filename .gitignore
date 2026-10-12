@@ -1,0 +1,16 @@
+cat > .gitignore << 'EOF'
+# Environments
+.venv/
+node_modules/
+
+# Secrets
+.env
+
+# Local data (keep the folder, ignore the contents)
+data/*
+!data/.gitkeep
+
+# Python junk
+__pycache__/
+*.pyc
+EOF
