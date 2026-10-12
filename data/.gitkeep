@@ -1,0 +1,14 @@
+cat > src/main.py << 'EOF'
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+required = ["OPENAI_BASE_URL", "OPENAI_API_KEY", "CHAT_MODEL", "EMBED_MODEL"]
+missing = [k for k in required if not os.getenv(k)]
+
+if missing:
+    print("Missing keys in .env:", ", ".join(missing))
+else:
+    print("Setup OK: all environment variables are loaded.")
+EOF
